@@ -1,4 +1,27 @@
+var video = document.querySelector('#video');
 
+if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+    var constraints = {
+        video: true
+    };
+
+    navigator.mediaDevices.getUserMedia(constraints)
+        .then(function(stream) {
+            video.srcObject = stream;
+            video.onloadedmetadata = function(e) {
+                video.play();
+            };
+            video.onplay = function() {
+                showVideo();
+            };
+        })
+        .catch(function(err) {
+            console.log (err);
+        });
+}
+else {
+    console.log ("navigator.mediaDevices not supported")
+}
 
 
 document.addEventListener('DOMContentLoaded', function () {
