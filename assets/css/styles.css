@@ -42,12 +42,13 @@ header .auth:hover{
     padding: 20px;
     background-color: #efefef;
 }
-button{
-    border: none;
-}
+
 .on {
+    width: 200px;
+    justify-content: center;
+    text-decoration: none;
     display: flex;
-    margin: 0 auto;
+    margin: 0 auto 10px;
     border-radius: 5px;
     padding: 10px;
     background: blue;
@@ -65,18 +66,7 @@ button{
     position: relative;
 }
 
-.app #start-camera{
-    display: none;
-    border-radius: 3px;
-    max-width: 400px;
-    color: #fff;
-    background-color: #448AFF;
-    text-decoration: none;
-    padding: 15px;
-    opacity: 0.8;
-    margin: 50px auto;
-    text-align: center;
-}
+
 
 .app video#camera-stream{
     display: none;
@@ -174,9 +164,6 @@ button{
         margin: 40px;
     }
 
-    .app #start-camera.visible{
-        display: block;
-    }
 
     .app .controls a i{
         font-size: 16px;

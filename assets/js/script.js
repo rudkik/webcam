@@ -1,9 +1,11 @@
+
+
+
 document.addEventListener('DOMContentLoaded', function () {
 
     // References to all the element we will need.
     var video = document.querySelector('#camera-stream'),
         image = document.querySelector('#snap'),
-        start_camera = document.querySelector('#start-camera'),
         controls = document.querySelector('.controls'),
         take_photo_btn = document.querySelector('#take-photo'),
         delete_photo_btn = document.querySelector('#delete-photo'),
@@ -21,7 +23,9 @@ document.addEventListener('DOMContentLoaded', function () {
             navigator.mediaDevices.getUserMedia(constraints)
                 .then(function(stream) {
                     video.srcObject = stream;
-                    video.play();
+                    video.onloadedmetadata = function(e) {
+                        video.play();
+                    };
                     video.onplay = function() {
                         showVideo();
                     };
@@ -37,15 +41,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-    start_camera.addEventListener("click", function(e){
 
-        e.preventDefault();
 
-        // Start video playback manually.
-        video.play();
-        showVideo();
-
-    });
 
 
     take_photo_btn.addEventListener("click", function(e){
@@ -140,7 +137,6 @@ document.addEventListener('DOMContentLoaded', function () {
         // Helper function for clearing the app UI.
 
         controls.classList.remove("visible");
-        start_camera.classList.remove("visible");
         video.classList.remove("visible");
         snap.classList.remove("visible");
         error_message.classList.remove("visible");
