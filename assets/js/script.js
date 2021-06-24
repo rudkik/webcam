@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
     else{
 
         // Request the camera.
-        navigator.getMedia(
+        navigator.mediaDevices.getMedia(
             {
                 video: true
             },
