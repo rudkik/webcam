@@ -10,11 +10,10 @@ document.addEventListener('DOMContentLoaded', function () {
         take_photo_btn = document.querySelector('#take-photo'),
         delete_photo_btn = document.querySelector('#delete-photo'),
         download_photo_btn = document.querySelector('#download-photo'),
-        error_message = document.querySelector('#error-message'),
-        button = document.querySelector('#on');
+        error_message = document.querySelector('#error-message');
 
 
-    button.addEventListener("click", function(){
+
         if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
             var constraints = {
                 video: true
@@ -37,12 +36,7 @@ document.addEventListener('DOMContentLoaded', function () {
         else {
             console.log ("navigator.mediaDevices not supported")
         }
-    });
-
-
-
-
-
+        
 
 
     take_photo_btn.addEventListener("click", function(e){

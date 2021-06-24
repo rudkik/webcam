@@ -18,7 +18,9 @@ h3{
     margin: 50px 0;
     text-align: center;
 }
-
+header{
+    background: #9b9b9b;
+}
 header .auth{
     padding: 20px;
     display: flex;
