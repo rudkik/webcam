@@ -24,7 +24,7 @@ header{
 header .auth{
     padding: 20px;
     display: flex;
-    margin: 0 0 0 auto;
+    margin: 0 auto;
     width: 165px;
 }
 header .auth:hover{
@@ -50,28 +50,22 @@ img#snap{
 .app canvas{
     display: none;
 }
-
-
-
-
-
-
+#take-photo{
+    margin: 0 auto;
+    display: flex;
+    text-decoration: none;
+    background: blue;
+    color: white;
+    width: 100px;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
 
 @media(max-width: 1000px){
     .container{
-        margin: 40px;
-    }
-
-    .app #start-camera.visible{
-        display: block;
-    }
-
-    .app .controls a i{
-        font-size: 16px;
-    }
-
-    .app .controls #take-photo i{
-        font-size: 24px;
+        margin: 10px;
     }
 }
 
@@ -81,26 +75,6 @@ img#snap{
         margin: 10px;
     }
 
-    .app #error-message{
-        padding: 80px 50px;
-        font-size: 18px;
-    }
 
-    .app .controls a i{
-        font-size: 12px;
-    }
-
-    .app .controls #take-photo i{
-        font-size: 18px;
-    }
-    .app video#camera-stream,
-    .app img#snap,
-    .app #error-message
-    {
-        display: block;
-    }
-    .app .controls{
-        display: flex;
-    }
 }
 
