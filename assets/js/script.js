@@ -11,9 +11,6 @@ if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
             video.onloadedmetadata = function(e) {
                 video.play();
             };
-            video.onplay = function() {
-                showVideo();
-            };
         })
         .catch(function(err) {
             console.log (err);
