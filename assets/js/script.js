@@ -80,14 +80,18 @@ else {
         image.setAttribute('src', "");
         image.classList.remove("visible");
 
-        // Disable delete and save buttons
-        delete_photo_btn.classList.add("disabled");
-        download_photo_btn.classList.add("disabled");
 
-        // Resume playback of stream.
+        delete_photo_btn.classList.add("disabled");
+
         video.play();
 
     });
+
+function hideUI(){
+        // Helper function for clearing the app UI.
+        video.classList.remove("visible");
+        snap.classList.remove("visible");
+    }
 
 // document.addEventListener('DOMContentLoaded', function () {
 //
@@ -126,15 +130,7 @@ else {
 //             console.log ("navigator.mediaDevices not supported")
 //         }
 //
-//     start_camera.addEventListener("click", function(e){
-//
-//         e.preventDefault();
-//
-//         // Start video playback manually.
-//         video.play();
-//         showVideo();
-//
-//     });
+
 //
 //     take_photo_btn.addEventListener("click", function(e){
 //
