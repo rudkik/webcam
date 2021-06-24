@@ -3,12 +3,12 @@ document.addEventListener('DOMContentLoaded', function () {
     // References to all the element we will need.
     var video = document.querySelector('#camera-stream'),
         image = document.querySelector('#snap'),
+        start_camera = document.querySelector('#start-camera'),
         controls = document.querySelector('.controls'),
         take_photo_btn = document.querySelector('#take-photo'),
         delete_photo_btn = document.querySelector('#delete-photo'),
         download_photo_btn = document.querySelector('#download-photo'),
         error_message = document.querySelector('#error-message'),
-        start_camera = document.querySelector('#on'),
         button = document.querySelector('#on');
 
 
@@ -142,6 +142,7 @@ document.addEventListener('DOMContentLoaded', function () {
         controls.classList.remove("visible");
         start_camera.classList.remove("visible");
         video.classList.remove("visible");
+        snap.classList.remove("visible");
         error_message.classList.remove("visible");
     }
 
