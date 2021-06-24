@@ -41,7 +41,6 @@ header .auth:hover{
 .container{
     max-width: 1000px;
     margin: 50px auto;
-    padding: 20px;
 }
 
 img#snap{
@@ -63,18 +62,4 @@ img#snap{
     border-radius: 5px;
 }
 
-@media(max-width: 1000px){
-    .container{
-        margin: 10px;
-    }
-}
-
-
-@media(max-width: 600px){
-    .container{
-        margin: 10px;
-    }
-
-
-}
 
