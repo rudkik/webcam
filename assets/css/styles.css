@@ -68,6 +68,18 @@ header .auth:hover{
     position: relative;
 }
 
+.app #start-camera{
+    display: none;
+    border-radius: 3px;
+    max-width: 400px;
+    color: #fff;
+    background-color: #448AFF;
+    text-decoration: none;
+    padding: 15px;
+    opacity: 0.8;
+    margin: 50px auto;
+    text-align: center;
+}
 
 
 .app video#camera-stream{
@@ -101,6 +113,8 @@ header .auth:hover{
     width: 100%;
     height: 100%;
     z-index: 20;
+
+    display: flex;
     align-items: flex-end;
     justify-content: space-between;
     padding: 30px;
@@ -166,6 +180,9 @@ header .auth:hover{
         margin: 40px;
     }
 
+    .app #start-camera.visible{
+        display: block;
+    }
 
     .app .controls a i{
         font-size: 16px;

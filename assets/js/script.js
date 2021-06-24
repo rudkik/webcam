@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var video = document.querySelector('#camera-stream'),
         image = document.querySelector('#snap'),
         controls = document.querySelector('.controls'),
+        start_camera = document.querySelector('#start-camera'),
         take_photo_btn = document.querySelector('#take-photo'),
         delete_photo_btn = document.querySelector('#delete-photo'),
         download_photo_btn = document.querySelector('#download-photo'),
@@ -36,8 +37,16 @@ document.addEventListener('DOMContentLoaded', function () {
         else {
             console.log ("navigator.mediaDevices not supported")
         }
-        
 
+    start_camera.addEventListener("click", function(e){
+
+        e.preventDefault();
+
+        // Start video playback manually.
+        video.play();
+        showVideo();
+
+    });
 
     take_photo_btn.addEventListener("click", function(e){
 
@@ -129,7 +138,7 @@ document.addEventListener('DOMContentLoaded', function () {
    
     function hideUI(){
         // Helper function for clearing the app UI.
-
+        start_camera.classList.remove("visible");
         controls.classList.remove("visible");
         video.classList.remove("visible");
         snap.classList.remove("visible");
