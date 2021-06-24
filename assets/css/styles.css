@@ -19,12 +19,45 @@ h3{
     text-align: center;
 }
 
-
+header .auth{
+    padding: 20px;
+    display: flex;
+    margin: 0 0 0 auto;
+    width: 165px;
+}
+header .auth:hover{
+    color: blue;
+    cursor: pointer;
+}
+.auth a {
+    color: black;
+    text-decoration: none;
+}
+.auth a:hover {
+    color: brown;
+}
 .container{
     max-width: 1000px;
     margin: 50px auto;
     padding: 20px;
     background-color: #efefef;
+}
+button{
+    border: none;
+}
+.on {
+    display: flex;
+    margin: 0 auto;
+    border-radius: 5px;
+    padding: 10px;
+    background: blue;
+    color: white;
+    font-size: 25px;
+}
+.on:hover{
+    transition: 0.4s;
+    color: black;
+    background: #448AFF;
 }
 
 .app{

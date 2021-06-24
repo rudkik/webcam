@@ -1,82 +1,42 @@
-if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-    var constraints = {
-        video: true
-    };
-
-    navigator.mediaDevices.getUserMedia(constraints)
-        .then(function(stream) {
-            var video = document.querySelector('video');
-            video.srcObject = stream;
-            video.onloadedmetadata = function(e) {
-                video.play();
-            };
-        })
-        .catch(function(err) {
-            console.log (err);
-        });
-}
-else {
-    console.log ("navigator.mediaDevices not supported")
-}
-
-
 document.addEventListener('DOMContentLoaded', function () {
 
     // References to all the element we will need.
     var video = document.querySelector('#camera-stream'),
         image = document.querySelector('#snap'),
-        start_camera = document.querySelector('#start-camera'),
+        start_camera = document.querySelector('#on'),
         controls = document.querySelector('.controls'),
         take_photo_btn = document.querySelector('#take-photo'),
         delete_photo_btn = document.querySelector('#delete-photo'),
         download_photo_btn = document.querySelector('#download-photo'),
-        error_message = document.querySelector('#error-message');
+        error_message = document.querySelector('#error-message'),
+        button = document.querySelector('#on');
 
 
-    // The getUserMedia interface is used for handling camera input.
-    // Some browsers need a prefix so here we're covering all the options
-    navigator.getMedia = ( navigator.mediaDevices && (navigator.mediaDevices.getUserMedia ||
-    navigator.webkitGetUserMedia ||
-    navigator.mozGetUserMedia ||
-    navigator.msGetUserMedia));
-
-
-    if(!navigator.getMedia){
-        displayErrorMessage("Your browser doesn't have support for the navigator.getUserMedia interface.");
-    }
-    else{
-
-        // Request the camera.
-        navigator.mediaDevices.getMedia(
-            {
+    button.addEventListener("click", function(){
+        if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+            var constraints = {
                 video: true
-            },
-            // Success Callback
-            function(stream){
+            };
 
-                // Create an object URL for the video stream and
-                // set it as src of our HTLM video element.
-                // video.src = window.URL.createObjectURL(stream);
-                video.srcObject = stream;
-                // Play the video element to start the stream.
-                video.play();
-                video.onplay = function() {
-                    showVideo();
-                };
-         
-            },
-            // Error Callback
-            function(err){
-                displayErrorMessage("There was an error with accessing the camera stream: " + err.name, err);
-            }
-        );
-
-    }
+            navigator.mediaDevices.getUserMedia(constraints)
+                .then(function(stream) {
+                    video.srcObject = stream;
+                    video.play();
+                    video.onplay = function() {
+                        showVideo();
+                    };
+                })
+                .catch(function(err) {
+                    console.log (err);
+                });
+        }
+        else {
+            console.log ("navigator.mediaDevices not supported")
+        }
+    });
 
 
 
-    // Mobile browsers cannot play video without user input,
-    // so here we're using a button to start it manually.
     start_camera.addEventListener("click", function(e){
 
         e.preventDefault();
