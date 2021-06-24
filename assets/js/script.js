@@ -13,10 +13,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // The getUserMedia interface is used for handling camera input.
     // Some browsers need a prefix so here we're covering all the options
-    navigator.getMedia = ( navigator.getUserMedia ||
+    navigator.getMedia = ( navigator.mediaDevices && (navigator.mediaDevices.getUserMedia ||
     navigator.webkitGetUserMedia ||
     navigator.mozGetUserMedia ||
-    navigator.msGetUserMedia);
+    navigator.msGetUserMedia));
 
 
     if(!navigator.getMedia){
