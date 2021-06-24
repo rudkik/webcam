@@ -1,3 +1,26 @@
+if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+    var constraints = {
+        audio: true,
+        video: true
+    };
+
+    navigator.mediaDevices.getUserMedia(constraints)
+        .then(function(stream) {
+            var video = document.querySelector('video');
+            video.srcObject = stream;
+            video.onloadedmetadata = function(e) {
+                video.play();
+            };
+        })
+        .catch(function(err) {
+            console.log (err);
+        });
+}
+else {
+    console.log ("navigator.mediaDevices not supported")
+}
+
+
 document.addEventListener('DOMContentLoaded', function () {
 
     // References to all the element we will need.
