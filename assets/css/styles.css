@@ -192,5 +192,14 @@ header .auth:hover{
     .app .controls #take-photo i{
         font-size: 18px;
     }
+    .app video#camera-stream,
+    .app img#snap,
+    .app #error-message
+    {
+        display: block;
+    }
+    .app .controls{
+        display: flex;
+    }
 }
 
