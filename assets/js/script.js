@@ -1,6 +1,5 @@
 if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
     var constraints = {
-        audio: true,
         video: true
     };
 
