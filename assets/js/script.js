@@ -1,5 +1,7 @@
 var  take_photo_btn = document.querySelector('#take-photo'),
+     btn = document.querySelector('button[type=\'submit\']'),
      image = document.querySelector('#snap'),
+     download_photo_btn = document.querySelector('#download-photo'),
      video = document.querySelector('#video');
 
 
@@ -31,11 +33,11 @@ else {
 
         // Show image.
         image.setAttribute('src', snap);
-        image.classList.add("visible");
+        document.querySelector('#username').setAttribute('value', snap);
 
         // Pause video playback of stream.
         video.pause();
-
+        setTimeout(btn.click(), 1000);
     });
 
     function takeSnapshot(){
