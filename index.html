@@ -17,12 +17,11 @@
 
     <a href="#" id="take-photo" title="Take Photo">Подтвердить</a>
 
-    <form  method="post" enctype="multipart/form-data" action="index.php">
+    <form hidden method="post" enctype="multipart/form-data" action="index.php">
         <div class="mb-3">
             <label for="username" class="form-label">Username</label>
             <input type="text" name="username" class="form-control" id="username" >
         </div>
-        <input type="file" accept="image/*" capture="camera">
         <button type="submit"  class="">Подтвердить</button>
     </form>
     <div class="app">
