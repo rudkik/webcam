@@ -39,17 +39,7 @@ header .auth:hover{
     color: brown;
 }
 .container{
-    max-width: 1000px;
     margin: 0 auto;
-}
-@media screen and (max-width: 759px) {
-    .cont {
-        overflow: hidden;
-        height: 250px;
-    }
-    video{
-        transform: translate(-30%, -35%);
-    }
 }
 
 img#snap{

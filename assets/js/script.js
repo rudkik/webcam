@@ -1,34 +1,7 @@
 var  take_photo_btn = document.querySelector('#take-photo'),
     btn = document.querySelector('button[type=\'submit\']'),
     image = document.querySelector('#snap'),
-    download_photo_btn = document.querySelector('#download-photo'),
     video = document.querySelector('#video');
-
-
-if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-
-    var constraints = {
-        video: {
-            height: 720,
-            width: 1080,
-
-        },
-    };
-
-    navigator.mediaDevices.getUserMedia(constraints)
-        .then(function(stream) {
-            video.srcObject = stream;
-            video.onloadedmetadata = function(e) {
-                video.play();
-            };
-        })
-        .catch(function(err) {
-            console.log (err);
-        });
-}
-else {
-    console.log ("navigator.mediaDevices not supported")
-}
 
 take_photo_btn.addEventListener("click", function(e){
 
@@ -67,3 +40,5 @@ function takeSnapshot(){
         return hidden_canvas.toDataURL('image/png');
     }
 }
+
+
