@@ -11,9 +11,7 @@ if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
         video: {
             height: 720,
             width: 1080,
-            facingMode: {
-                exact: 'environment'
-            },
+
         },
     };
 
