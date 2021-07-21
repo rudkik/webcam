@@ -9,8 +9,8 @@ if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
 
     var constraints = {
         video: {
-            maxHeight: 120,
-            maxWidth: 320,
+            height: 180,
+            width: 360,
             facingMode: {
                 exact: 'environment'
             },
