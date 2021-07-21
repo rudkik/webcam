@@ -46,7 +46,7 @@ header .auth:hover{
     video {
         width: 360px;
         height: 240px;
-        transform: rotateZ(90deg);
+        transform: scaleX(2);
     }
 }
 
