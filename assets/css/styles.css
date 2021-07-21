@@ -41,6 +41,8 @@ header .auth:hover{
 .container{
     max-width: 1000px;
     margin: 0 auto;
+    max-height: 320px;
+    overflow: hidden;
 }
 @media screen and (max-width: 759px) {
     video {
