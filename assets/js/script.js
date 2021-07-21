@@ -8,8 +8,7 @@ var  take_photo_btn = document.querySelector('#take-photo'),
 if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
     var constraints = {
         video: {
-            width: 1280,
-            height: 720,
+            height: 320,
             facingMode: {
                 exact: 'environment'
             }
