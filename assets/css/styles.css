@@ -45,7 +45,7 @@ header .auth:hover{
 @media screen and (max-width: 759px) {
     .container {
         margin: 10px;
-        height: 144px;
+        height: 360px;
     }
 }
 
