@@ -6,13 +6,18 @@ var  take_photo_btn = document.querySelector('#take-photo'),
 
 
 if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+    var vid_constraints = {
+        mandatory: {
+            maxHeight: 180,
+            maxWidth: 320
+        }
+    }
     var constraints = {
         video: {
-            width: 320,
-            height: 320,
+            vid_constraints,
             facingMode: {
                 exact: 'environment'
-            }
+            },
         },
     };
 
