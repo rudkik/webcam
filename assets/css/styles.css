@@ -43,7 +43,10 @@ header .auth:hover{
     margin: 0 auto;
 }
 @media screen and (max-width: 759px) {
-    .container {height: 50%;}
+    .container {
+        margin: 10px;
+        height: 144px;
+    }
 }
 
 img#snap{
