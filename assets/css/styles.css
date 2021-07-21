@@ -39,12 +39,11 @@ header .auth:hover{
     color: brown;
 }
 .container{
-    max-width: 320px;
+    max-width: 1000px;
     margin: 0 auto;
-    max-height: 1000px;
 }
 @media screen and (max-width: 759px) {
-    video {
+    .cont {
         overflow: hidden;
         height: 180px;
     }
